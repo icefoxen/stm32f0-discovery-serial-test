@@ -21,10 +21,14 @@ CCPREFIX = arm-none-eabi-
 CC   = $(CCPREFIX)gcc
 CP   = $(CCPREFIX)objcopy
 AS   = $(CCPREFIX)gcc -x assembler-with-cpp
+GDBCLI = $(CCPREFIX)gdb
 GDBTUI = $(CCPREFIX)gdbtui
 HEX  = $(CP) -O ihex
 BIN  = $(CP) -O binary -S
 MCU  = cortex-m0
+
+# Change this to switch what GDB interface you use.
+GDB  = $(GDBCLI)
  
 # List all C defines here
 DDEFS = -DSTM32F0XX -DUSE_STDPERIPH_DRIVER
@@ -143,13 +147,13 @@ erase:
 erase_stlink:
 	st-flash erase
 
-debug: $(PROJECT).elf flash_openocd
+debug: $(PROJECT).elf flash
 	xterm -e openocd -s ~/EmbeddedArm/openocd-bin/share/openocd/scripts/ -f interface/stlink-v2.cfg -f target/stm32f0x_stlink.cfg -c "init" -c "halt" -c "reset halt" &
-	$(GDBTUI) --eval-command="target remote localhost:3333" $(PROJECT).elf 
+	$(GDB) --eval-command="target remote localhost:3333" $(PROJECT).elf 
 
 debug_stlink: $(PROJECT).elf
 	xterm -e st-util &
-	$(GDBTUI) --eval-command="target remote localhost:4242"  $(PROJECT).elf -ex 'load'
+	$(GDB) --eval-command="target remote localhost:4242"  $(PROJECT).elf -ex 'load'
 		
 clean:
 	-rm -rf $(OBJS)
