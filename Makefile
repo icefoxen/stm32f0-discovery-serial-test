@@ -159,4 +159,7 @@ clean:
 	-rm -rf $(PROJECT).bin
 	-rm -rf $(SRC:.c=.lst)
 	-rm -rf $(ASRC:.s=.lst)
-# *** EOF ***
+
+format:
+        astyle --style=java --indent=tab --pad-oper --align-pointer=name --add-brackets --unpad-paren --max-code-length=78 --suffix=none --exclude=cross --formatted --lineend=linux --recursive '*.c' '*.h'
+
