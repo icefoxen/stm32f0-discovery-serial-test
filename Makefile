@@ -161,5 +161,5 @@ clean:
 	-rm -rf $(ASRC:.s=.lst)
 
 format:
-        astyle --style=java --indent=tab --pad-oper --align-pointer=name --add-brackets --unpad-paren --max-code-length=78 --suffix=none --exclude=cross --formatted --lineend=linux --recursive '*.c' '*.h'
+	astyle --style=java --indent=tab --pad-oper --align-pointer=name --add-brackets --unpad-paren --max-code-length=78 --suffix=none --formatted --lineend=linux --recursive '*.c' '*.h'
 
