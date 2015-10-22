@@ -1,26 +1,10 @@
-/******************************************************************************
-  * @file    IO_Toggle/main.c 
-  * @author  MCD Application Team
-  * @version V1.0.0
-  * @date    23-March-2012
-  * @brief   Main program body
-  ******************************************************************************/
-  
-/* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx.h"
 
-
-/* Private typedef -----------------------------------------------------------*/
-/* Private define ------------------------------------------------------------*/
 #define BSRR_VAL        0x0300
 
 
 void delay (int a);
-/**
-  * @brief  Main program.
-  * @param  None
-  * @retval None
-  */
+
 int main(void)
 {
   /*!< At this stage the microcontroller clock setting is already configured, 

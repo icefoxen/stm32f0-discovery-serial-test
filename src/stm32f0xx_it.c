@@ -30,20 +30,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx_it.h"
 
-/** @addtogroup STM32F0_Discovery_Peripheral_Examples
-  * @{
-  */
-
-/** @addtogroup IO_Toggle
-  * @{
-  */
-
-/* Private typedef -----------------------------------------------------------*/
-/* Private define ------------------------------------------------------------*/
-/* Private macro -------------------------------------------------------------*/
-/* Private variables ---------------------------------------------------------*/
-/* Private function prototypes -----------------------------------------------*/
-/* Private functions ---------------------------------------------------------*/
 
 /******************************************************************************/
 /*            Cortex-M0 Processor Exceptions Handlers                         */
@@ -110,16 +96,11 @@ void SysTick_Handler(void)
   * @param  None
   * @retval None
   */
-/*void PPP_IRQHandler(void)
+/*
+void PPP_IRQHandler(void)
 {
-}*/
+}
+*/
 
-/**
-  * @}
-  */
-
-/**
-  * @}
-  */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

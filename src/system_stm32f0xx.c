@@ -69,35 +69,8 @@
   ******************************************************************************
   */
 
-/** @addtogroup CMSIS
-  * @{
-  */
-
-/** @addtogroup stm32f0xx_system
-  * @{
-  */  
-  
-/** @addtogroup STM32F0xx_System_Private_Includes
-  * @{
-  */
-
 #include "stm32f0xx.h"
 
-/**
-  * @}
-  */
-
-/** @addtogroup STM32F0xx_System_Private_TypesDefinitions
-  * @{
-  */
-
-/**
-  * @}
-  */
-
-/** @addtogroup STM32F0xx_System_Private_Defines
-  * @{
-  */
 /* Select the PLL clock source */
 
 #define PLL_SOURCE_HSI        // HSI (~8MHz) used to clock the PLL, and the PLL is used as system clock source
@@ -105,41 +78,10 @@
 //#define PLL_SOURCE_HSE_BYPASS // HSE bypassed with an external clock (8MHz, coming from ST-Link) used to clock
                               // the PLL, and the PLL is used as system clock source
 
-/**
-  * @}
-  */
-
-/** @addtogroup STM32F0xx_System_Private_Macros
-  * @{
-  */
-
-/**
-  * @}
-  */
-
-/** @addtogroup STM32F0xx_System_Private_Variables
-  * @{
-  */
 uint32_t SystemCoreClock    = 48000000;
 __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
 
-/**
-  * @}
-  */
-
-/** @addtogroup STM32F0xx_System_Private_FunctionPrototypes
-  * @{
-  */
-
 static void SetSysClock(void);
-
-/**
-  * @}
-  */
-
-/** @addtogroup STM32F0xx_System_Private_Functions
-  * @{
-  */
 
 /**
   * @brief  Setup the microcontroller system.
@@ -368,17 +310,5 @@ static void SetSysClock(void)
   }  
 #endif /* PLL_SOURCE_HSI */  
 }
-
-/**
-  * @}
-  */
-
-/**
-  * @}
-  */
-
-/**
-  * @}
-  */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

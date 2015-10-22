@@ -42,13 +42,6 @@
   ******************************************************************************
   */
 
-/** @addtogroup CMSIS
-  * @{
-  */
-
-/** @addtogroup stm32f0xx
-  * @{
-  */
     
 #ifndef __STM32F0XX_H
 #define __STM32F0XX_H
@@ -56,10 +49,6 @@
 #ifdef __cplusplus
  extern "C" {
 #endif 
-  
-/** @addtogroup Library_configuration_section
-  * @{
-  */
   
 /* Uncomment the line below according to the target STM32F-0 device used in your 
    application 
@@ -150,14 +139,6 @@
                                              |(__STM32F0XX_STDPERIPH_VERSION_RC))
 
 /**
-  * @}
-  */
-
-/** @addtogroup Configuration_section_for_CMSIS
-  * @{
-  */
-
-/**
  * @brief STM32F0xx Interrupt Number Definition, according to the selected device 
  *        in @ref Library_configuration_section 
  */
@@ -208,17 +189,11 @@ typedef enum IRQn
   CEC_IRQn                    = 30      /*!< CEC Interrupt                                           */
 } IRQn_Type;
 
-/**
-  * @}
-  */
 
 #include "core_cm0.h"
 #include "system_stm32f0xx.h"
 #include <stdint.h>
 
-/** @addtogroup Exported_types
-  * @{
-  */  
 
 typedef enum {RESET = 0, SET = !RESET} FlagStatus, ITStatus;
 
@@ -227,9 +202,6 @@ typedef enum {DISABLE = 0, ENABLE = !DISABLE} FunctionalState;
 
 typedef enum {ERROR = 0, SUCCESS = !ERROR} ErrorStatus;
 
-/** @addtogroup Peripheral_registers_structures
-  * @{
-  */   
 
 /** 
   * @brief Analog to Digital Converter  
@@ -648,13 +620,6 @@ typedef struct
 } WWDG_TypeDef;
 
 
-/**
-  * @}
-  */
-  
-/** @addtogroup Peripheral_memory_map
-  * @{
-  */
 
 #define FLASH_BASE            ((uint32_t)0x08000000) /*!< FLASH base address in the alias region */
 #define SRAM_BASE             ((uint32_t)0x20000000) /*!< SRAM base address in the alias region */
@@ -711,9 +676,6 @@ typedef struct
 #define GPIOD_BASE            (AHB2PERIPH_BASE + 0x00000C00)
 #define GPIOF_BASE            (AHB2PERIPH_BASE + 0x00001400)
 
-/**
-  * @}
-  */
   
 /** @addtogroup Peripheral_declaration
   * @{
@@ -765,17 +727,7 @@ typedef struct
 #define GPIOD               ((GPIO_TypeDef *) GPIOD_BASE)
 #define GPIOF               ((GPIO_TypeDef *) GPIOF_BASE)
 
-/**
-  * @}
-  */
 
-/** @addtogroup Exported_constants
-  * @{
-  */
-  
-  /** @addtogroup Peripheral_Registers_Bits_Definition
-  * @{
-  */
     
 /******************************************************************************/
 /*                         Peripheral Registers Bits Definition               */
@@ -3184,37 +3136,16 @@ typedef struct
 /*******************  Bit definition for WWDG_SR register  ********************/
 #define  WWDG_SR_EWIF                        ((uint8_t)0x01)               /*!< Early Wakeup Interrupt Flag */
 
-/**
-  * @}
-  */
-
- /**
-  * @}
-  */ 
 
 #ifdef USE_STDPERIPH_DRIVER
   #include "stm32f0xx_conf.h"
 #endif
 
-/** @addtogroup Exported_macro
-  * @{
-  */
-/**
-  * @}
-  */
 
 #ifdef __cplusplus
 }
 #endif
 
 #endif /* __STM32F0XX_H */
-
-/**
-  * @}
-  */
-
-  /**
-  * @}
-  */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
