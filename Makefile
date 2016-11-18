@@ -47,7 +47,7 @@ DISCOVERY    = ../STM32F0-Discovery_FW_V1.0.0/Utilities/STM32F0-Discovery
 
 #list of src files to include in build process
 
-SRC  = ./src/main.c
+SRC  = ./src/main.c ./src/serial.c
 SRC += ./src/stm32f0xx_it.c
 SRC += $(DEVDIR)/Source/Templates/system_stm32f0xx.c
 
@@ -70,7 +70,7 @@ SRC += $(STMSPSRCDDIR)/stm32f0xx_rcc.c
 #SRC += $(STMSPSRCDDIR)/stm32f0xx_rtc.c
 #SRC += $(STMSPSRCDDIR)/stm32f0xx_spi.c
 #SRC += $(STMSPSRCDDIR)/stm32f0xx_tim.c
-#SRC += $(STMSPSRCDDIR)/stm32f0xx_usart.c
+SRC += $(STMSPSRCDDIR)/stm32f0xx_usart.c
 #SRC += $(STMSPSRCDDIR)/stm32f0xx_wwdg.c
 #SRC += $(STMSPSRCDDIR)/stm32f0xx_misc.c
 
@@ -110,7 +110,7 @@ OBJS  = $(STARTUP:.s=.o) $(SRC:.c=.o)
 MCFLAGS = -mcpu=$(MCU)
  
 ASFLAGS = $(MCFLAGS) -g -gdwarf-2 -mthumb  -Wa,-amhls=$(<:.s=.lst) 
-CPFLAGS = $(MCFLAGS) $(OPT) -g -gdwarf-2 -mthumb   -fomit-frame-pointer -Wall -Wstrict-prototypes -fverbose-asm -Wa,-ahlms=$(<:.c=.lst) $(DEFS)
+CPFLAGS = $(MCFLAGS) $(OPT) -g -gdwarf-2 -mthumb   -fomit-frame-pointer -Wall -fverbose-asm -Wa,-ahlms=$(<:.c=.lst) $(DEFS)
 LDFLAGS = $(MCFLAGS) -g -gdwarf-2 -mthumb -nostartfiles -T$(LINKER_SCRIPT) -Wl,-Map=$(PROJECT).map,--cref,--no-warn-mismatch $(LIBDIR) $(LIB)
  
 #
